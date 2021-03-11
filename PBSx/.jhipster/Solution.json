@@ -1,0 +1,31 @@
+{
+  "name": "Solution",
+  "fields": [
+    {
+      "fieldName": "solution",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "bug",
+      "otherEntityRelationshipName": "solution",
+      "relationshipName": "bug",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210304134434",
+  "entityTableName": "solution",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "PBSx",
+  "applications": "*",
+  "microserviceName": "PBSx"
+}
