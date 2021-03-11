@@ -16,6 +16,11 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MicroUser.DBContexts;
 using MicroUser.Repository;
+using Consul;
+using MicroUser.Services;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
+using Ocelot.Provider.Consul;
 
 namespace MicroUser
 {
@@ -34,6 +39,13 @@ namespace MicroUser
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<UserContext>(o => o.UseSqlServer(Configuration.GetConnectionString("UserDB")));
             services.AddTransient<IUserRepository, UserRepository>();
+
+            //Aggiunta configurazione consul service
+            services.AddConsulConfig(Configuration);
+
+            //Aggiunta ocelot
+           
+            services.AddOcelot().AddConsul();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
@@ -62,6 +74,9 @@ namespace MicroUser
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //aggiunta consul service
+            app.UseConsul(Configuration);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
