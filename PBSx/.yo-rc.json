@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "it.contrader"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "microservice",
+    "baseName": "PBSx",
+    "packageName": "it.contrader",
+    "packageFolder": "it/contrader",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "consul",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MWEzMzc1NjEyMTI2MjIwN2RiMzUxNjY3MTY0OTQxNzNlZGNkOTJiYzRmMzI3M2Q4Y2EyZDFmMDk2MTkxZDIxMGU1MjFkZDNlODBjODc5ZTk4ZDk0YWFmNDQ1NDY0ZGE5NzM4MmE0MDA0ZWVlM2U4ZWVmM2JlMGM2OWY3YzU0Yjg=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1614864130628,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true,
+    "lastLiquibaseTimestamp": 1614864422000
+  }
+}

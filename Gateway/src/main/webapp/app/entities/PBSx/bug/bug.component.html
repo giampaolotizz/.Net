@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span>Bugs</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-bug" [routerLink]="['/bug/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Bug
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="bugs?.length === 0">
+        <span>No bugs found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="bugs && bugs.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Code</span></th>
+                    <th scope="col" ><span>State</span></th>
+                    <th scope="col" ><span>Description</span></th>
+                    <th scope="col" ><span>Date</span></th>
+                    <th scope="col" ><span>Dependence List</span></th>
+                    <th scope="col" ><span>Project</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bug of bugs ;trackBy: trackId">
+                    <td><a [routerLink]="['/bug', bug.id, 'view']">{{ bug.id }}</a></td>
+                    <td>{{ bug.code }}</td>
+                    <td>{{ bug.state }}</td>
+                    <td>{{ bug.description }}</td>
+                    <td>{{ bug.date }}</td>
+                    <td>{{ bug.dependenceList }}</td>
+                    <td>
+                        <div *ngIf="bug.projectId">
+                            <a [routerLink]="['/project', bug.projectId , 'view']" >{{ bug.projectId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/bug', bug.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/bug', bug.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(bug)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
