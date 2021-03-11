@@ -1,0 +1,36 @@
+nav {
+    height: 85vh;
+    background-color: #030301;
+    padding: 0 ! important;
+    margin: 0 ! important;
+  }
+
+.navbar {
+  padding: 0 ! important;
+  margin: 0 ! important;
+}
+  
+  .navbar-brand {
+    color: #FFFCF9;
+    margin: 0 ! important;
+    padding-right: 100px;
+    font-size: 17px;
+  }
+
+  .navbar-brand:hover {
+    cursor: pointer;
+  }
+
+  nav div .navbar-brand {
+    background-color: #1F1F0A;
+    padding-top: 10px;
+  }
+  
+  nav .fas {
+    padding-right: 15px;
+  }
+  
+  nav div .fas {
+    padding-left: 15px;
+  }
+  

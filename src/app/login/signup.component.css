@@ -1,0 +1,43 @@
+.container-fluid {
+    background-image: url(../../assets/back.jpg);
+	background-size: cover;
+}
+
+.gradient {
+    height: 100vh;
+    background: rgb(3,3,1);
+    background: linear-gradient(250deg, rgba(3,3,1,1) 50%, rgba(255,255,255,0) 50%);
+}
+
+.col-md-6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#logo {
+    padding-top: 10vh;
+}
+
+.fas, h1, p, label {
+    color: #FFFCF9;
+}
+
+p {
+    padding-top: 5vh;
+    font-size: 2em;
+}
+
+label {
+    font-size: 1.5em;
+}
+
+.fas {
+    font-size: 100px;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 40px;
+}

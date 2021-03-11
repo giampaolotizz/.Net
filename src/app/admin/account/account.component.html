@@ -1,0 +1,56 @@
+<main class="col-md-10">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <div class="wrapper-container">
+      
+      <table class="table table-sm table-dark table-hover" [className]="tableUp? 'table table-sm table-dark table-hover moveTable' : 'table table-sm table-dark table-hover'">
+        <thead>
+          <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Edit</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input class="form-control-plaintext" [(ngModel)]="user.login"></td> 
+            <td><button class="btn" (click)=showModal()>Change Password</button></td>
+            <td><input class="form-control-plaintext" [(ngModel)]="user.email"></td> 
+            <td><button class="btn" (click)=update(user)>Save</button></td>
+          </tr>
+         
+        </tbody>
+      </table>
+
+
+      <div id="modal" class="col-md-12" *ngIf="seeModal">
+        <form #f="ngForm">
+          <p class="text-center"> Please insert a new password</p>
+          <div class="form-group">
+            <label for="oldP">Old Password:</label>
+            <input class="form-control form-control-lg" type="password" id="oldP" name="oldP" value="oldP" ngModel placeholder="Insert your previous password..." required>
+          </div>
+          <div class="form-group">
+            <label for="newP">New Password:</label>
+            <input class="form-control form-control-lg" type="password" id="newP" name="newP" value="newP" ngModel placeholder="Insert your new password..." required>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6">
+              <button class="btn btn-default btn-block btn-lg" type="button" (click)="closeModal()">Close</button>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-default btn-block btn-lg" type="submit" (click)="changePassword(f)">Confirm</button>
+            </div>
+          </div>
+          
+        </form>
+      </div>
+
+  </div>
+
+
+</main>

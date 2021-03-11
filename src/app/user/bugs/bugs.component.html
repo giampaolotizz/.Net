@@ -1,0 +1,83 @@
+<main class="col-md-10">
+  <div class="wrapper-container">
+    <div class="wrapper">
+      
+      <table class="table table-sm table-dark table-hover" id="table" *ngIf="seeTable">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">State</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date</th>
+            <th scope="col">Dependence List</th>
+            <th scope="col">User Id</th>
+            <th scope="col">Project Id</th>
+            <th scope="col">Relative Solutions</th>
+            <th scope="col">Relative Users</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bug of bugs">
+            <th scope="row"><input class="form-control-plaintext" [(ngModel)]="bug.id" readonly></th>
+            <td><input class="form-control-plaintext" [(ngModel)]="bug.state" readonly></td>
+            <td><input class="form-control-plaintext" [(ngModel)]="bug.description" readonly></td>
+            <td><input class="form-control-plaintext" [(ngModel)]="bug.data" readonly></td>
+            <td><input class="form-control-plaintext" [(ngModel)]="bug.dependenceList" readonly></td>
+            <td><input class="form-control-plaintext" [(ngModel)]="bug.user.id" readonly></td>
+            <td><input class="form-control-plaintext" [(ngModel)]="bug.project.id" readonly></td>
+            <td><button class="btn" [routerLink]="['/admin-dashboard/solutions',bug.id]" routerLinkActive="active" >Visualizza</button></td>
+            <td><button class="btn" (click)="getListUser(bug.user.id)">Visualizza</button></td>
+          </tr>
+         
+        </tbody>
+      </table>
+    
+      <div *ngIf="projectId==0">
+      <form #bugForm="ngForm">
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" id="fe" [(ngModel)]="bugtoinsert.id" type="radio" name="id" id="id" value="FE">
+            <label class="form-check-label" for="fe">FE</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" id="be" [(ngModel)]="bugtoinsert.id" type="radio" name="id" id="id" value="BE">
+            <label class="form-check-label" for="be">BE</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <input id="description" [(ngModel)]="bugtoinsert.description" class="form-control" placeholder="description" name="description">
+        </div>
+
+        <div ngModelGroup="dependenceList" class="form-group">
+          <p>Related Bugs:</p>
+            <div class="form-check form-check-inline" *ngFor="let bug of bugs; let i = index" >
+              <input ngModel type="checkbox" [name]="bug.id">
+              <label class="form-check-label">{{bug.id}}</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <p>User Id: {{user.id}}</p>
+        </div>
+
+        <div class="form-group">
+          <label for="projectId">Project Id: </label>
+          <select [(ngModel)]="bugtoinsert.project.id" class="form-control" name="projectId" id="projectId">
+            <option *ngFor="let project of projects" [value]="project.id">{{project.id}}</option>
+          </select>
+        </div>
+
+        <div>
+          <button class="btn insert" (click)="insert(bugtoinsert, bugForm)">Insert</button>
+          <button class="btn" (click)="clear()">Clear</button>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+
+  <button id="moveButt" class="btn" data-target="#table" (click)="showInsertForm()">{{moveButton}}</button>
+
+</main>

@@ -1,0 +1,36 @@
+#header {
+  height: 15vh;
+  background-color: #FFFCF9;
+}
+
+#profile {
+  height: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+img {
+  height: 70%;
+  border-radius: 50%;
+}
+
+#header p {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#usertype {
+  color: #FF9F1C;
+}
+
+.fa-bug {
+  font-size: 50px;
+}
+
+.fa-phone, .fa-bell, .fa-envelope {
+  font-size: 25px;
+  padding-right: 15px;
+}

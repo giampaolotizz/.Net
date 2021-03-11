@@ -1,0 +1,18 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .btn {
+    background-color: #FF9F1C ! important;
+  }
+
+  small, .small {
+    display: block;
+    width: 100%;
+    font-size: 90% ! important;
+    padding-left: 5px;
+    background-color: #dc3545;
+    color: #FFFCF9;
+    border-radius: 0 0 2px 2px;
+  }
+/* You can add global styles to this file, and also import other style files */

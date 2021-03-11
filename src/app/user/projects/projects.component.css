@@ -1,0 +1,75 @@
+.wrapper-container {
+	width: 70vw;
+	height: 75vh;
+	overflow-x: hidden;
+	-ms-overflow-style: none;
+   scrollbar-width: none;
+  }
+  
+  .wrapper-container::-webkit-scrollbar {
+	  display: none;
+  }
+  
+  .wrapper {
+	width: 140vw;
+	height: 95%;
+	display: flex;
+	flex-direction: row;
+  }
+  
+  form {
+	background-color: #FFFCF9;
+	height: 100%;
+	width: 70vw;
+	border-radius: 5px;
+	padding: 2% 10%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+  }
+  
+  .form-group {
+	width: 100%;
+  }
+
+  .insert {
+	margin-right: 30px;
+	}
+  
+  table {
+	height: 100%;
+	width: 70vw ! important;
+	font-size: 12px;
+  }
+  
+  td, th {
+	vertical-align: middle ! important;
+  }
+
+  table .form-control-plaintext {
+	color: black;
+  }
+
+  table select {
+	color: black;
+  }
+  
+  input, .btn, select {
+	font-size: 15px;
+  }
+
+  label, p {
+	font-size: 15px;
+	font-weight: bold;
+  }
+
+  .wrapper .btn, #moveButt {
+	font-size: 15px;
+  }
+
+  #moveButt {
+	position: absolute;
+	right: 36%;
+	bottom: -3%;
+}

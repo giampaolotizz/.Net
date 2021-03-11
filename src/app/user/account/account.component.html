@@ -1,0 +1,26 @@
+<main class="col-md-10">
+  <div class="wrapper-container">
+      
+      <table class="table table-sm table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Edit</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input class="form-control-plaintext" [(ngModel)]="user.login"></td> 
+            <td><input class="form-control-plaintext" [(ngModel)]="user.password"></td> 
+            <td><input class="form-control-plaintext" [(ngModel)]="user.email"></td> 
+            <td><button class="btn" (click)=update(user)>Save</button></td>
+          </tr>
+         
+        </tbody>
+      </table>
+
+  </div>
+</main>

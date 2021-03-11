@@ -1,0 +1,16 @@
+<div id="header" class="row align-items-center">
+  <div id="profile" class="col-md-2">
+      <img class="" src="../../../assets/user.svg" alt="">
+  </div>
+
+  <div class="col-md-2 text-center">
+    <p id="usertype" *ngIf="isAdmin">ADMIN</p>
+    <p id="usertype" *ngIf="!isAdmin">USER</p>
+  </div>
+  <div class="col-md-6 text-center">
+    <i id="logo" class="fas fa-bug"></i>
+  </div>
+  <div class="col-md-2 text-center">
+    <p>{{user.login}}</p>
+  </div>
+</div>

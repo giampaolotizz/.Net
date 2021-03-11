@@ -1,0 +1,40 @@
+<nav class="col-md-2 navbar">
+    <a class="navbar-brand" [routerLink]="['/user-dashboard']">
+      <i class="fas fa-home"></i>Dashboard
+    </a>
+    <a class="navbar-brand" data-toggle="collapsebtn" data-target="#account" (click)="accountcollapse()">
+      <i class="fas fa-user"></i>Account
+    </a>
+    <div class="collapsebtn" id="account" *ngIf="isAccountCollapsed">
+      <a class="navbar-brand" [routerLink]="['/user-dashboard/account']">
+        <i class="fas fa-user-edit"></i>Edit Profile
+      </a>
+    </div>
+    <a class="navbar-brand" data-toggle="collapsebtn" data-target="#projects" (click)="projectscollapse()">
+      <i class="fas fa-folder-open"></i>Projects
+    </a>
+    <div class="collapsebtn" id="projects" *ngIf="isProjectCollapsed">
+      <a class="navbar-brand" [routerLink]="['/user-dashboard/projects']">
+        <i class="fas fa-edit"></i>Manage Projects
+      </a>
+    </div>
+    <a class="navbar-brand" data-toggle="collapsebtn" data-target="#bugs" (click)="bugscollapse()">
+      <i class="fas fa-ghost"></i>Bugs
+    </a>
+    <div class="collapsebtn" id="bugs" *ngIf="isBugCollapsed">
+      <a class="navbar-brand" [routerLink]="['/user-dashboard/bugs/0']">
+        <i class="fas fa-edit"></i>Manage Bugs
+      </a>
+    </div>
+    <a class="navbar-brand" data-toggle="collapsebtn" data-target="#solutions" (click)="solutionscollapse()">
+      <i class="fas fa-lightbulb"></i>Solutions
+    </a>
+    <div class="collapsebtn" id="solutions" *ngIf="isSolutionCollapsed">
+      <a class="navbar-brand" [routerLink]="['/user-dashboard/solutions/undefined']"> <i class="fas fa-edit">
+        </i>Manage solutions
+      </a>
+    </div>
+    <a class="navbar-brand" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i>Logout
+    </a>
+  </nav>

@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row gradient">
+      <div class="col-md-6">
+        <form #f="ngForm">
+          <p class="text-center">Fill the form to Sign Up</p>
+          <div class="form-group">
+            <label for="user">Username:</label>
+            <input class="form-control form-control-lg" type="text" id="user" name="username" placeholder="Username" ngModel #username=ngModel [class.is-invalid]="username.invalid && username.touched" required>
+            <small [class.d-none]="username.valid || username.untouched">A username is required</small>
+          </div>
+          <div class="form-group">
+            <label for="mail">E-mail:</label>
+            <input class="form-control form-control-lg" type="mail" id="mail" name="mail" placeholder="E-mail" ngModel #mail=ngModel pattern="[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" [class.is-invalid]="mail.invalid && mail.touched" required>
+            <small [class.d-none]="mail.valid || mail.untouched">A valid e-mail is required</small>
+          </div>
+          <div class="form-group">
+            <label for="pass">Password:</label>
+            <input class="form-control form-control-lg" type="password" id="pass" name="password" placeholder="Password" ngModel #password=ngModel [class.is-invalid]="password.invalid && password.touched" required>
+            <small [class.d-none]="password.valid || password.untouched">A password required</small>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6">
+              <button class="btn btn-default btn-block btn-lg" type="submit" (click)="insert(f)">Sign Up</button>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-default btn-block btn-lg" type="submit" (click)="toLogin(f)">To Login</button>
+            </div>
+          </div>  
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div id="logo" class="text-center">
+          <i class="fas fa-bug"></i>
+          <h1>iTesting</h1>
+        </div>
+      </div>
+    </div>
+  </div>

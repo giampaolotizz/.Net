@@ -1,0 +1,61 @@
+<main class="col-md-10">
+  <div class="wrapper-container">
+    <div class="wrapper">
+      
+      <table class="table table-sm table-dark table-hover" id="table" *ngIf="seeTable">
+        <thead>
+          <tr>
+            <th scope="col">Solution</th>
+            <th scope="col">Bug </th>
+            <th scope="col">Edit</th>
+            <th scope="col">Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let solution of solutions">
+            <td><input class="form-control-plaintext" [(ngModel)]="solution.solution"></td>
+            <td><input class="form-control-plaintext" [ngModel]="solution.bugId" readonly></td>
+            <td><button class="btn" (click)=update(solution)>Save</button></td>
+            <td><button class="btn" (click)="delete(solution)">Delete</button></td>
+          </tr>
+         
+        </tbody>
+      </table>
+    
+      <div *ngIf="bugId=='undefined'">
+        <form #bugForm="ngForm">
+
+          <div class="form-group">
+            <label for="solution">Solution:</label>
+            <input  name="solution" id="solution" placeholder="Solution" [(ngModel)]="solutiontoinsert.solution" class="form-control">
+          </div>
+
+          <!----
+          <div class="form-group">
+            <label for="userId">User Id: </label>
+            <select name="userId" id="userId" [(ngModel)]="solutiontoinsert.user.id" class="form-control">
+              <option *ngFor="let user of users" [value]="user.id">{{user.id}}</option>
+            </select>
+          </div>
+          -->
+
+          <div class="form-group">
+            <label for="bugId">Bug: </label>
+            <select name="bugId" id="bugId" [(ngModel)]="solutiontoinsert.bugId" class="form-control">
+              <option *ngFor="let bug of bugs" [value]="bug.id">{{bug.code}}</option>
+            </select>
+          </div>
+  
+          <div>
+            <button class="btn insert" (click)="insert(solutiontoinsert)">Insert</button>
+            <button class="btn" (click)="clear()">Clear</button>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+
+  <button id="moveButt" class="btn" data-target="#table" *ngIf="bugId=='undefined'" (click)="showInsertForm()">{{moveButton}}</button>
+
+</main>
