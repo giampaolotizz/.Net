@@ -12,5 +12,11 @@ namespace MicroUser.Models
         public string Password { get; set; }
         public string Usertype { get; set; }
         public string Email { get; set; }
+
+        public User()
+        {
+
+        }
+
     }
 }

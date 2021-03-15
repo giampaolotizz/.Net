@@ -36,9 +36,21 @@ namespace MicroUser
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSwaggerDocument();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<UserContext>(o => o.UseSqlServer(Configuration.GetConnectionString("UserDB")));
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddHttpClient();
+            services.AddSingleton<UserRepository>();
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin();
+                });
+            });
 
             //Aggiunta configurazione consul service
             services.AddConsulConfig(Configuration);
@@ -50,7 +62,7 @@ namespace MicroUser
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
-            {
+                {
 
                     //Convalida del server che genera il token 
                     ValidateIssuer = true,
@@ -87,8 +99,14 @@ namespace MicroUser
             }
 
             app.UseHttpsRedirection();
+            //app.useRouting();
+            app.UseOpenApi();
+            
             app.UseAuthentication();
             app.UseMvc();
+            app.UseCors();
+            app.UseSwaggerUi3();
+            
         }
     }
 }

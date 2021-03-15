@@ -72,6 +72,6 @@ namespace MicroUser.Controllers
             var userLogin = _context.Login.FirstOrDefault(u => u.Username.Equals(login.Username) && u.Password.Equals(login.Password));
             return userLogin;
         }
-        }
+    }
 
-        }
+}
