@@ -13,8 +13,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of users">
-            <td><input class="form-control-plaintext" [(ngModel)]="user.login"></td>
+          <tr *ngFor="let user of usersDot">
+            <td><input class="form-control-plaintext" [(ngModel)]="user.username"></td>
             <td><input class="form-control-plaintext" [(ngModel)]="user.email"></td> 
             <td>
               <select class="form-select" [(ngModel)]="role">
@@ -23,7 +23,7 @@
               </select>
             </td>
             <td><button class="btn" (click)=update(user,role)>Save</button></td>
-            <td><button class="btn" (click)="delete(user)">Delete</button></td>
+            <td><button class="btn" (click)="delete2(user.id)">Delete</button></td>
           </tr>
          
         </tbody>

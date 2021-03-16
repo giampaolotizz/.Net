@@ -73,5 +73,7 @@ updatePassword(password : PasswordChangeDTO){
   });
 }
 
+logout(){}
+
 
 }

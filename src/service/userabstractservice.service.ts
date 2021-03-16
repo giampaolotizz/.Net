@@ -33,7 +33,7 @@ export abstract class UserAbstractService<DTO, T> implements Service<DTO, T> {
 
     getAll(): Observable<DTO[]> {
 
-        return this.http.get<DTO[]>('http://localhost:' + this.port + '/' + 'api' + '/' + this.type  , {
+        return this.http.get<DTO[]>('http://localhost:8080/services/userService/api/user' , {
           headers: {
             Authorization : this.auth()
           }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/service/user.service';
+import {DotnetService } from 'src/service/dotnetservice.service';
 import { UserDTO } from 'src/dto/userdto';
-import { PasswordChangeDTO } from 'src/dto/passwordchangedto';
+import { User } from 'src/model/user';
 
 @Component({
   selector: 'app-users',
@@ -15,11 +16,13 @@ export class UsersComponent implements OnInit {
   moveButton = "Insert";
   seeTable = true;
   role = '';
+  usersDot : User[];
 
-  constructor(private service: UserService) { }
+  constructor(private service: UserService, private dotnet: DotnetService) { }
 
   ngOnInit() {
-    this.getUsers();
+    //this.getUsers();
+    this.getUsers2();
   }
 
   getUsers() {
@@ -27,8 +30,17 @@ export class UsersComponent implements OnInit {
      
   }
 
+  getUsers2() {
+    this.dotnet.getAll().subscribe(users => this.usersDot = users);
+     
+  }
+
   delete(user: UserDTO) {
     this.service.deleteUser(user.login).subscribe(() => this.getUsers());
+  }
+
+  delete2(id: Number) {
+    this.dotnet.delete(id).subscribe(() => this.getUsers2());
   }
 
   update(user: UserDTO, role: String) {

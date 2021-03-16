@@ -8,13 +8,13 @@ import {Usertype} from "../dto/usertype"
  */
 export class User {
 
-    id: number;
+    Id: number;
 
-    username: string;
+    Username: string;
 
-    password: string;
+    Password: string;
  
-    usertype: Usertype;
+    Usertype: string;
  
-    mail: string;
+    Email: string;
 }
