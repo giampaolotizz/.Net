@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { UserDTO } from "src/dto/userdto";
+import { Login } from "src/model/login";
 import { User } from "src/model/user";
 
 
@@ -76,6 +77,20 @@ export class DotnetService {
           }
         });
 
+  }
+
+  login(login: Login): Observable<UserDTO> {
+    return this.http.post<any>('http://localhost:8080/services/userService/api/login',login)
+  }
+
+  userLogged(username: string) {
+ 
+    return this.http.get('http://localhost:8080/services/userService/api/user/' + username, {
+     
+    headers: {
+        Authorization: this.auth()
+      }
+    });
   }
 
    
