@@ -44,6 +44,8 @@ namespace MicroUser
             services.AddHttpClient();
             services.AddSingleton<UserRepository>();
 
+            //services.AddControllers();
+
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -99,6 +101,7 @@ namespace MicroUser
             }
 
             app.UseHttpsRedirection();
+
             //app.useRouting();
             app.UseOpenApi();
             

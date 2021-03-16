@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj": {}
+    "C:\\Users\\Francesco\\Desktop\\microS\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj": {
+    "C:\\Users\\Francesco\\Desktop\\microS\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj",
+        "projectUniqueName": "C:\\Users\\Francesco\\Desktop\\microS\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj",
         "projectName": "MicroUser",
-        "projectPath": "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj",
-        "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\obj\\",
+        "projectPath": "C:\\Users\\Francesco\\Desktop\\microS\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj",
+        "packagesPath": "C:\\Users\\Francesco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Francesco\\Desktop\\microS\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francesco\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
