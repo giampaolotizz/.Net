@@ -26,14 +26,14 @@ namespace MicroUser.Repository
             Save();
         }
 
-        public User GetUserByID(int UserId)
+        public async Task<User> GetUserByID(int UserId)
         {
-            return _dbContext.User.Find(UserId);
+            return await _dbContext.User.FindAsync(UserId);
         }
 
-        public IEnumerable<User> GetUsers()
+        public async Task<IEnumerable<User>> GetUsers()
         {
-            return _dbContext.User.ToList();
+            return await _dbContext.User.ToListAsync();
         }
 
         public void InsertUser(User User)
@@ -59,9 +59,9 @@ namespace MicroUser.Repository
             _dbContext.Entry(login).State = EntityState.Modified; Save();
         }
 
-        public User GetUserByUsername(string username)
+        public async Task<User> GetUserByUsername(string username)
         {
-            return _dbContext.User.Find(username);
+            return await _dbContext.User.FindAsync(username);
         }
     }
 }

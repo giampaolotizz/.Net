@@ -8,9 +8,9 @@ namespace MicroUser.Repository
 {
     public interface IUserRepository
     {
-        IEnumerable<User> GetUsers();
+      Task<IEnumerable<User>> GetUsers();
 
-        User GetUserByID(int UserId);
+        Task<User> GetUserByID(int UserId);
 
         void InsertUser(User User);
 
@@ -18,7 +18,7 @@ namespace MicroUser.Repository
 
         void UpdateUser(User User);
 
-        User GetUserByUsername(String username);
+        Task<User> GetUserByUsername(String username);
 
         void Save();
     }

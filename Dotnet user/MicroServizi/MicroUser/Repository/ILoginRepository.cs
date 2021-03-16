@@ -8,9 +8,9 @@ namespace MicroUser.Repository
 {
     interface ILoginRepository
     {
-        IEnumerable<Login> GetLogins();
+        Task<IEnumerable<Login>> GetLogins();
 
-        Login GetLoginByID(int LoginId);
+        Task<Login> GetLoginByID(int LoginId);
 
         void InsertLogin(Login login);
 

@@ -26,18 +26,18 @@ namespace MicroUser.Controllers
 
         // GET: api/User
         [HttpGet]
-        public ActionResult<IEnumerable<User>> Get()
+        public async Task<ActionResult<IEnumerable<User>>> Get()
         {
-            var finalResults = _userRepository.GetUsers().ToList();
+            var finalResults = await _userRepository.GetUsers();
             return Ok(finalResults);
 
         }
 
         // GET: api/User/5
         [HttpGet("{id}", Name = "GetUser")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            var user = _userRepository.GetUserByID(id);
+            var user = await _userRepository.GetUserByID(id);
             return new OkObjectResult(user);
         }
 
@@ -52,9 +52,9 @@ namespace MicroUser.Controllers
 
         // PUT: api/User
         [HttpPut]
-        public IActionResult Put([FromBody] User user)
+        public async Task<IActionResult> Put([FromBody] User user)
         {
-            User u = _userRepository.GetUserByID(user.Id);
+            User u = await _userRepository.GetUserByID(user.Id);
 
             if (u != null)
             {

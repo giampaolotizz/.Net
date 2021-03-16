@@ -25,14 +25,14 @@ namespace MicroUser.Repository
             Save();
         }
 
-        public Login GetLoginByID(int LoginId)
+        public async Task<Login> GetLoginByID(int LoginId)
         {
-            return _dbContext.Login.Find(LoginId);
+            return await _dbContext.Login.FindAsync(LoginId);
         }
 
-        public IEnumerable<Login> GetLogins()
+        public async Task<IEnumerable<Login>> GetLogins()
         {
-            return _dbContext.Login.ToList();
+            return await _dbContext.Login.ToListAsync();
         }
 
         public void InsertLogin(Login login)
