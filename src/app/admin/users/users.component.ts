@@ -56,8 +56,12 @@ export class UsersComponent implements OnInit {
     this.role = '';
   }
 
+  update2(user: User) {
+    this.dotnet.update(user).subscribe(() => this.getUsers2());
+  }
+
   insert(user: UserDTO, role: String) {
-    if (role == "ADMIN"){
+    if (role == "ADMIN") {
       user.authorities.push("ROLE_ADMIN");
       user.authorities.push("ROLE_USER");
       console.log(this.getRole(user))
@@ -69,6 +73,10 @@ export class UsersComponent implements OnInit {
     this.clear();
     this.seeTable = true;
     this.moveButton = "Insert";
+  }
+
+  insert2(user: User) {
+   this.dotnet.insert(user).subscribe(() => this.getUsers2());
   }
 
   clear(){
