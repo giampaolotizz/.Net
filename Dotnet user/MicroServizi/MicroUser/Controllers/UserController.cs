@@ -76,5 +76,14 @@ namespace MicroUser.Controllers
             _userRepository.DeleteUser(id);
             return new OkResult();
         }
+
+        // GET: api/User/Login
+        [HttpGet("{login}", Name = "GetLogin")]
+        public IActionResult getByUsername(String login)
+        {
+            var user = _userRepository.GetUserByUsername(login);
+            return new OkObjectResult(user);
+        }
+
     }
 }

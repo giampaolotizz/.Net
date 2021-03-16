@@ -18,6 +18,8 @@ namespace MicroUser.Repository
 
         void UpdateUser(User User);
 
+        User GetUserByUsername(String username);
+
         void Save();
     }
 }

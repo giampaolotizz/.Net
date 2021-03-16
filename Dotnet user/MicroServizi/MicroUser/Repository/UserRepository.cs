@@ -20,7 +20,9 @@ namespace MicroUser.Repository
         public void DeleteUser(int UserId)
         {
             var user = _dbContext.User.Find(UserId);
+            var login = _dbContext.Login.Find(UserId);
             _dbContext.User.Remove(user);
+            _dbContext.Login.Remove(login);
             Save();
         }
 
@@ -36,7 +38,11 @@ namespace MicroUser.Repository
 
         public void InsertUser(User User)
         {
+            Login login = new Login();
             _dbContext.Add(User); Save();
+            login.Username = User.Username;
+            login.Password = User.Password;
+            _dbContext.Add(login); Save();
         }
 
         public void Save()
@@ -47,6 +53,15 @@ namespace MicroUser.Repository
         public void UpdateUser(User User)
         {
             _dbContext.Entry(User).State = EntityState.Modified; Save();
+            Login login = new Login();
+            login.Username = User.Username;
+            login.Password = User.Password;
+            _dbContext.Entry(login).State = EntityState.Modified; Save();
+        }
+
+        public User GetUserByUsername(string username)
+        {
+            return _dbContext.User.Find(username);
         }
     }
 }
