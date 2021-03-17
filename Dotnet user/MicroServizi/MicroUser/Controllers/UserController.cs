@@ -78,12 +78,13 @@ namespace MicroUser.Controllers
         }
 
         // GET: api/User/Login
-        [HttpGet("{login}", Name = "GetLogin")]
-        public IActionResult getByUsername(String login)
+        [HttpGet("/cerca/{Username}")]
+        public async Task<ActionResult<User>> getByUsername(string Username)
         {
-            var user = _userRepository.GetUserByUsername(login);
-            return new OkObjectResult(user);
+            var user = await _userRepository.GetUserByUsername(Username);
+            
+            return Ok(user);
         }
-
+        
     }
 }

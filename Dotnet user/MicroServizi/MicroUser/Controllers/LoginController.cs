@@ -28,19 +28,13 @@ namespace MicroUser.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Login([FromBody] Login login)
+        public Boolean Login([FromBody] Login login)
         {
             IActionResult response = Unauthorized();
             var user = AuthenticateUser(login);
 
-            if (user != null)
-            {
-               // var tokenString = GenerateJSONWebToken(user);
-
-                response = Ok(new { logged = true });
-            }
-
-            return response;
+            return user != null;
+          
         }
 
         //Genero il token

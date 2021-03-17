@@ -61,7 +61,6 @@ namespace MicroUser.Repository
 
         public async Task<User> GetUserByUsername(string username)
         {
-            return await _dbContext.User.FindAsync(username);
-        }
+            return await _dbContext.User.Where(e => e.Username.Contains(username)).FirstOrDefaultAsync(); }
     }
 }
