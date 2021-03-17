@@ -31,8 +31,6 @@ export class DotnetService {
     }
 
     getAll(): Observable<User[]> {
-
-      console.log("prelevo i dati");
       
       return this.http.get<User[]>('http://localhost:8080/services/userService/api/user' , {
         headers: {
@@ -61,8 +59,6 @@ export class DotnetService {
 
 
   insert(user: User): Observable<any> {
-
-
       return this.http.post<User>('http://localhost:8080/services/userService/api/user', user, {
           headers: {
             Authorization : this.auth()
@@ -83,16 +79,12 @@ export class DotnetService {
     return this.http.post<any>('http://localhost:8080/services/userService/api/login',login)
   }
 
-  userLogged(username: string) {
- 
-    return this.http.get('http://localhost:8080/services/userService/api/user/' + username, {
-     
+  userLogged(username: string) { 
+    return this.http.get('http://localhost:8080/services/userService/api/user/' + username, {     
     headers: {
         Authorization: this.auth()
       }
     });
-  }
-
-   
+  }   
 
 }

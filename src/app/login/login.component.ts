@@ -3,7 +3,6 @@ import { LoginDTO } from 'src/dto/logindto';
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/service/user.service';
 import { Router } from '@angular/router';
-import { UserDTO } from 'src/dto/userdto';
 import { Login } from 'src/model/login';
 import { DotnetService } from 'src/service/dotnetservice.service';
 import { User } from 'src/model/user';
@@ -55,28 +54,24 @@ export class LoginComponent implements OnInit {
     this.dotnet.login(this.login2).subscribe((token:any) => {
 
       localStorage.setItem("AUTOKEN", JSON.stringify({ "authorities" : token.id_token }));
-      console.log(localStorage.getItem("AUTOKEN"));
-
       
       this.dotnet.userLogged(this.login2.username).subscribe((user:User)=> {
         
-      if (user != null) {
+        if (user != null) {
+          
+          localStorage.setItem("currentUser", JSON.stringify(user));
         
-        localStorage.setItem("currentUser", JSON.stringify(user));
-        console.log(localStorage.getItem("currentUser"));
-       
-        if(user.Usertype.indexOf("ADMIN") != -1  ) {
-          this.router.navigate(['/admin-dashboard']);
-        } else  {
-            this.router.navigate(['/user-dashboard']);
+          if (user.Usertype.indexOf("ADMIN") != -1  ) {
+            this.router.navigate(['/admin-dashboard']);
+          } else {
+              this.router.navigate(['/user-dashboard']);
+            }
+          
+        } else {
+            alert("Wrong username or password");
           }
-        
-      } else {
-          alert("Wrong username or password");
-        }
       });
     });
-
   }
 
   signup() {

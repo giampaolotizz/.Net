@@ -3,7 +3,6 @@ import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 import { LoginDTO } from "src/dto/logindto";
 import { UserDTO } from "src/dto/userdto";
-import { Usertype } from "src/dto/usertype";
 import { UserService } from "src/service/user.service";
 
 @Component({
@@ -29,41 +28,23 @@ import { UserService } from "src/service/user.service";
 
   
       this.service.login(this.loginDTO).subscribe((token : any) => {
-      
-      
+              
         localStorage.setItem("AUTOKEN", JSON.stringify({ "authorities": token.id_token }));
       
           this.service.register(this.userDTO).subscribe( (u)=> {
         
             this.chiave = u.activationKey;
-            console.log(this.chiave);
       
-           this.prova(this.chiave)
-             
-          
-  
-  
+           this.prova(this.chiave)  
         });
-      },undefined, ()=>{
+      }, undefined, ()=> {
          localStorage.clear()
          this.router.navigateByUrl('');
-      }
-         );
-  
-  
-  
-     
-  
-      
-  
-      
-  
+      });
     }
   
-    prova(chiave:string){
-  
-      this.service.activate(chiave).subscribe();
-  
+    prova(chiave:string) {  
+      this.service.activate(chiave).subscribe();  
     }
 
     toLogin() {
