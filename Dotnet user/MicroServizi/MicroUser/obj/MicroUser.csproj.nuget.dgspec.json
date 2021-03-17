@@ -1,22 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj",
-        "projectName": "MicroUser",
-        "projectPath": "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj",
-        "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
     "C:\\Users\\Francesco\\Desktop\\microS\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj": {}
   },
   "projects": {
@@ -34,7 +18,6 @@
         ],
         "configFilePaths": [
           "C:\\Users\\Francesco\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 2d9e9f62c33aa5c158807e2029425909051d3d1b
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

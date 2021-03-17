@@ -61,6 +61,7 @@ namespace MicroUser
            
             services.AddOcelot().AddConsul();
 
+            /*
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -82,6 +83,8 @@ namespace MicroUser
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                 };
             });
+            */
+
 
         }
 

@@ -13359,27 +13359,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marco\\.nuget\\packages\\": {}
+    "C:\\Users\\Francesco\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj",
-      "projectName": "MicroUser",
-      "projectPath": "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj",
-      "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marco\\Documents\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\obj\\",
-=======
       "projectUniqueName": "C:\\Users\\Francesco\\Desktop\\microS\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj",
       "projectName": "MicroUser",
       "projectPath": "C:\\Users\\Francesco\\Desktop\\microS\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\MicroUser.csproj",
       "packagesPath": "C:\\Users\\Francesco\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Francesco\\Desktop\\microS\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\obj\\",
->>>>>>> 2d9e9f62c33aa5c158807e2029425909051d3d1b
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Francesco\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13460,5 +13456,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Si è verificato un problema durante la lettura del file di cache C:\\Users\\Francesco\\Desktop\\microS\\dotnet\\Dotnet user\\MicroServizi\\MicroUser\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

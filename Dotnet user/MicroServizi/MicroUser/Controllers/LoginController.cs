@@ -35,9 +35,9 @@ namespace MicroUser.Controllers
 
             if (user != null)
             {
-                var tokenString = GenerateJSONWebToken(user);
+               // var tokenString = GenerateJSONWebToken(user);
 
-                response = Ok(new { token = tokenString });
+                response = Ok(new { logged = true });
             }
 
             return response;
