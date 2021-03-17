@@ -79,6 +79,7 @@ namespace MicroUser.Controllers
 
         // GET: api/User/Login
         [HttpGet("/cerca/{Username}")]
+        [DisableCors]
         public async Task<ActionResult<User>> getByUsername(string Username)
         {
             var user = await _userRepository.GetUserByUsername(Username);
